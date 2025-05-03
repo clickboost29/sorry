@@ -11,25 +11,25 @@
       padding: 0;
       background: linear-gradient(120deg, #ffe4e1, #ffc1cc);
       font-family: 'Indie Flower', cursive;
-      overflow: hidden;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
     .center-box {
-      position: absolute;
-      width: 100%;
-      height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
       text-align: center;
       padding: 20px;
+      min-height: 100vh;
+      box-sizing: border-box;
     }
 
     h1 {
-      font-size: 32px;
-      margin-bottom: 30px;
+      font-size: 6vw;
       color: #c2185b;
+      margin-bottom: 30px;
     }
 
     button {
@@ -39,7 +39,9 @@
       border-radius: 25px;
       background-color: #ff6f91;
       color: white;
-      font-size: 18px;
+      font-size: 5vw;
+      max-width: 200px;
+      width: 70%;
       cursor: pointer;
       transition: background 0.3s;
     }
@@ -54,30 +56,55 @@
       cursor: not-allowed;
     }
 
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+    }
+
     .letter {
-      display: none;
       background: #fff;
-      padding: 40px;
+      padding: 25px;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      width: 100%;
       max-width: 600px;
-      margin: auto;
-      text-align: center;
       animation: fadeIn 2s ease-in-out;
-      position: relative;
       z-index: 1;
     }
 
     .letter h2 {
-      font-size: 36px;
+      font-size: 7vw;
       color: #d32f2f;
       margin-bottom: 20px;
     }
 
     .letter p {
-      font-size: 24px;
+      font-size: 4.5vw;
       color: #333;
       line-height: 1.6;
+    }
+
+    @media(min-width: 600px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      button {
+        font-size: 18px;
+      }
+
+      .letter h2 {
+        font-size: 36px;
+      }
+
+      .letter p {
+        font-size: 20px;
+      }
     }
 
     @keyframes fadeIn {
@@ -142,11 +169,11 @@
   <div class="container" style="display:none;" id="letter-screen">
     <div class="letter" id="letter">
       <h2>I Am Sorry</h2>
-      <p>Hello Nica , hope you are doing really well in your life,taking care of yourself and eating well, the thing is I am really really sorry that I removed you,
+      <p>Hello Nica, hope you are doing really well in your life, taking care of yourself and eating well. The thing is I am really really sorry that I removed you,
        that was really a wrong decision but I wanted to talk to you back then and I saw your story so I got sad, but leave it. I just wanted to tell you that I like you for real 
-       and lots of things are going in my life but what's the point of these things if I can't share it with the girl I like . We are not talking for almost 2 months now but still I misses you a lot like really a
-       lot, so please tell me about yourself, I am always ready to hear all about you, how can I understand your problems if you don't tell me. I don't know we can end up together in future or not but still I 
-       wanna try, all I am asking is for your reply. Can you give us another chance if possible?</p> 
+       and lots of things are going in my life but what's the point of these things if I can't share it with the girl I like. We are not talking for almost 2 months now but still I miss you a lot, like really a
+       lot, so please tell me about yourself. I am always ready to hear all about you. How can I understand your problems if you don't tell me? I don't know if we can end up together in the future or not but still I 
+       wanna try. All I am asking is for your reply. Can you give us another chance if possible?</p> 
     </div>
   </div>
 
