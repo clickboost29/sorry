@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>I'm Sorry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #ffe4e1, #ffc1cc);
+      font-family: 'Indie Flower', cursive;
+      overflow: hidden;
+    }
+
+    .center-box {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #c2185b;
+    }
+
+    button {
+      padding: 12px 25px;
+      margin: 10px;
+      border: none;
+      border-radius: 25px;
+      background-color: #ff6f91;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff3e6c;
+    }
+
+    #no-btn {
+      background-color: #ccc;
+      color: #777;
+      cursor: not-allowed;
+    }
+
+    .letter {
+      display: none;
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+      position: relative;
+      z-index: 1;
+    }
+
+    .letter h2 {
+      font-size: 36px;
+      color: #d32f2f;
+      margin-bottom: 20px;
+    }
+
+    .letter p {
+      font-size: 24px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff6f91;
+      transform: rotate(45deg);
+      animation: float 10s infinite ease-in-out;
+      opacity: 0.8;
+      z-index: 0;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff6f91;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-1000px) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- First screen -->
+  <div class="center-box" id="first-screen">
+    <h1>Do you wanna read the sorry letter?</h1>
+    <div>
+      <button onclick="showLetter()">Yes</button>
+      <button id="no-btn" disabled>No</button>
+    </div>
+  </div>
+
+  <!-- Letter screen -->
+  <div class="container" style="display:none;" id="letter-screen">
+    <div class="letter" id="letter">
+      <h2>I Am Sorry</h2>
+      <p>Hello Nica , hope you are doing really well in your life,taking care of yourself and eating well, the thing is I am really really sorry that I removed you,
+       that was really a wrong decision but I wanted to talk to you back then and I saw your story so I got sad, but leave it. I just wanted to tell you that I like you for real 
+       and lots of things are going in my life but what's the point of these things if I can't share it with the girl I like . We are not talking for almost 2 months now but still I misses you a lot like really a
+       lot, so please tell me about yourself, I am always ready to hear all about you, how can I understand your problems if you don't tell me. I don't know we can end up together in future or not but still I 
+       wanna try, all I am asking is for your reply. Can you give us another chance if possible?</p> 
+    </div>
+  </div>
+
+  <script>
+    function showLetter() {
+      document.getElementById("first-screen").style.display = "none";
+      document.getElementById("letter-screen").style.display = "flex";
+      document.getElementById("letter").style.display = "block";
+
+      // Floating hearts
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = 100 + Math.random() * 500 + "px";
+        heart.style.animationDuration = 5 + Math.random() * 5 + "s";
+        document.body.appendChild(heart);
+      }
+    }
+  </script>
+</body>
+</html>
