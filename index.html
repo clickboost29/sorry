@@ -24,6 +24,7 @@
       padding: 20px;
       min-height: 100vh;
       box-sizing: border-box;
+      position: relative;
     }
 
     h1 {
@@ -183,7 +184,17 @@
       document.getElementById("letter-screen").style.display = "flex";
       document.getElementById("letter").style.display = "block";
 
-      // Floating hearts
+      // Floating hearts for first page
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = 100 + Math.random() * 500 + "px";
+        heart.style.animationDuration = 5 + Math.random() * 5 + "s";
+        document.body.appendChild(heart);
+      }
+
+      // Floating hearts for second page
       for (let i = 0; i < 30; i++) {
         const heart = document.createElement("div");
         heart.className = "heart";
